@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>আর্কাইভ - মুক্তিযুদ্ধের নিদর্শন</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main styles, components, responsive, and custom for archive -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/archive-custom.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">মুক্তিযুদ্ধ আর্কাইভ</a>
+            <a href="index.html" class="nav-link">প্রথম পৃষ্ঠা</a>
+            <a href="gallery.html" class="nav-link">৩ডি গ্যালারি</a>
+            <a href="archive.html" class="nav-link active">আর্কাইভ</a>
+            <a href="index.html#timeline" class="nav-link">টাইমলাইন</a>
+            <a href="index.html#preservation" class="nav-link">সংরক্ষণ</a>
+            <a href="index.html#about" class="nav-link">সম্পর্কে</a>
+        </div>
+    </nav>
+    <main>
+        <section class="archive-section">
+            <div class="container archive-layout">
+                <div class="archive-content">
+                    <h1>মুক্তিযুদ্ধের আর্কাইভ</h1>
+                    <p>বাংলাদেশের ইতিহাসের গুরুত্বপূর্ণ বছরগুলোর নিদর্শনসমূহ এখানে সময়ক্রমে প্রদর্শিত হয়েছে।</p>
+                    <div class="archive-artifacts">
+                        <!-- Example artifacts, each with a year marker -->
+                        <div class="artifact-card" data-year="1948">
+                            <h3>১৯৪৮: ভাষা আন্দোলনের দলিল</h3>
+                            <img src="images/1948-document.png" alt="১৯৪৮ দলিল" />
+                            <p>বাংলা ভাষার দাবির ঐতিহাসিক দলিল।</p>
+                        </div>
+                        <div class="artifact-card" data-year="1952">
+                            <h3>১৯৫২: শহীদ মিনার</h3>
+                            <img src="images/1952-shohid-minar.png" alt="শহীদ মিনার" />
+                            <p>ভাষা আন্দোলনের স্মৃতিস্তম্ভ।</p>
+                        </div>
+                        <div class="artifact-card" data-year="1966">
+                            <h3>১৯৬৬: ছয় দফা দলিল</h3>
+                            <img src="images/1966-six-point.png" alt="ছয় দফা" />
+                            <p>স্বাধীনতার আন্দোলনের গুরুত্বপূর্ণ দলিল।</p>
+                        </div>
+                        <div class="artifact-card" data-year="1970">
+                            <h3>১৯৭০: নির্বাচনী পোস্টার</h3>
+                            <img src="images/1970-election.png" alt="নির্বাচনী পোস্টার" />
+                            <p>স্বাধীনতার পূর্ববর্তী নির্বাচনের স্মৃতি।</p>
+                        </div>
+                        <div class="artifact-card" data-year="1971">
+                            <h3>১৯৭১: মুক্তিযুদ্ধের রাইফেল</h3>
+                            <model-viewer src="models/rifle.glb" alt="৩ডি রাইফেল" camera-controls auto-rotate style="width:100%;height:300px;"></model-viewer>
+                            <p>মুক্তিযুদ্ধের সময় ব্যবহৃত অস্ত্র।</p>
+                        </div>
+                        <div class="artifact-card" data-year="1971">
+                            <h3>১৯৭১: স্বাধীনতার দলিল</h3>
+                            <img src="images/1971-document.png" alt="স্বাধীনতার দলিল" />
+                            <p>বাংলাদেশের স্বাধীনতার ঘোষণাপত্র।</p>
+                        </div>
+                        <div class="artifact-card" data-year="1971">
+                            <h3>১৯৭১: বিজয় পতাকা</h3>
+                            <img src="images/1971-flag.png" alt="বিজয় পতাকা" />
+                            <p>বাংলাদেশের বিজয়ের প্রতীক।</p>
+                        </div>
+                        <!-- Add more artifacts as needed, with correct year -->
+                    </div>
+                </div>
+                <aside class="archive-sidebar">
+                    <div class="year-marker-list">
+                        <!-- Years from 1948 to 1971 -->
+                        <button class="year-marker" data-year="1948">১৯৪৮</button>
+                        <button class="year-marker" data-year="1952">১৯৫০</button>
+                        <button class="year-marker" data-year="1952">১৯৫২</button>
+                        <button class="year-marker" data-year="1966">১৯৬৪</button>
+                        <button class="year-marker" data-year="1966">১৯৬৬</button>
+                        <button class="year-marker" data-year="1966">১৯৬৯</button>
+                        <button class="year-marker" data-year="1970">১৯৭০</button>
+                        <button class="year-marker" data-year="1971">১৯৭১</button>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo-container">
+                            <div class="logo-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                                    <path d="M2 17L12 22L22 17"/>
+                                    <path d="M2 12L12 17L22 12"/>
+                                </svg>
+                            </div>
+                            <span class="logo-text">মুক্তিযুদ্ধ আর্কাইভ</span>
+                        </div>
+                        <p class="footer-description">
+                            বাংলাদেশের মুক্তিযুদ্ধের ঐতিহ্য সংরক্ষণে উদ্ভাবনী ৩ডি প্রযুক্তি ও ডিজিটাল সমাধান।
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>প্ল্যাটফর্ম</h4>
+                    <ul class="footer-links">
+                        <li><a href="gallery.html">৩ডি গ্যালারি</a></li>
+                        <li><a href="archive.html">ডিজিটাল আর্কাইভ</a></li>
+                        <li><a href="index.html#timeline">ইন্টারেক্টিভ টাইমলাইন</a></li>
+                        <li><a href="index.html#preservation">সংরক্ষণ প্রযুক্তি</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>রিসোর্স</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">ডকুমেন্টেশন</a></li>
+                        <li><a href="#">এপিআই রেফারেন্স</a></li>
+                        <li><a href="#">গবেষণা পোর্টাল</a></li>
+                        <li><a href="#">শিক্ষামূলক উপকরণ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>যোগাযোগ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">যোগাযোগ করুন</a></li>
+                        <li><a href="#">পার্টনারশিপ</a></li>
+                        <li><a href="#">গবেষণা সহযোগিতা</a></li>
+                        <li><a href="#">মিডিয়া কিট</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; ২০২৪ মুক্তিযুদ্ধ জাদুঘর আর্কাইভ। সর্বস্বত্ব সংরক্ষিত।</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">গোপনীয়তা নীতি</a>
+                    <a href="#">সেবার শর্তাবলী</a>
+                    <a href="#">প্রবেশযোগ্যতা</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    // Smooth scroll to artifacts by year
+    document.querySelectorAll('.year-marker').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const year = this.getAttribute('data-year');
+            const target = document.querySelector('.artifact-card[data-year="' + year + '"]');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.querySelectorAll('.year-marker').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            }
+        });
+    });
+
+    // Smooth artifact pop-in effect on scroll
+    function revealArtifacts() {
+        const artifacts = document.querySelectorAll('.artifact-card');
+        const windowHeight = window.innerHeight;
+        artifacts.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top < windowHeight - 60) {
+                card.classList.add('visible');
+            }
+        });
+    }
+    window.addEventListener('scroll', revealArtifacts);
+    window.addEventListener('DOMContentLoaded', revealArtifacts);
+    </script>
+</body>
+</html>

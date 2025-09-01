@@ -1,0 +1,155 @@
+--- START OF FILE archive-custom.css ---
+
+:root {
+    --primary: #00695c;
+    --secondary: #ffb300;
+    --background: #f8f8f8;
+    --card-bg: #ffffff;
+    --text: #222;
+    --accent: #e65100;
+    --border-radius: 12px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    --hover-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    --sidebar-bg: #e0e0e0;
+}
+
+/* Layout */
+.archive-layout {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+}
+
+.archive-content {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.archive-sidebar {
+    width: 70px;
+    background: var(--sidebar-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+    min-height: 300px;
+}
+
+.year-marker-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.year-marker {
+    background: #fff;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin: 0;
+    transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow);
+}
+.year-marker.active,
+.year-marker:hover {
+    background: var(--secondary);
+    color: #fff;
+    border-color: var(--secondary);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Artifacts grid */
+.archive-artifacts {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.artifact-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1rem 1rem 1rem;
+    transition: box-shadow 0.3s, transform 0.3s, opacity 0.6s;
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    will-change: opacity, transform;
+}
+.artifact-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.artifact-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.artifact-card p {
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.artifact-card img,
+.artifact-card model-viewer {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background: #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    margin-bottom: 0.5rem;
+    transition: box-shadow 0.2s;
+}
+
+.artifact-card img:hover,
+.artifact-card model-viewer:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .archive-layout {
+        flex-direction: column;
+    }
+    .archive-sidebar {
+        flex-direction: row;
+        width: auto;
+        min-height: unset;
+        margin-bottom: 2rem;
+        justify-content: center;
+    }
+    .year-marker-list {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem 0.5rem;
+    }
+    .archive-content {
+        padding-right: 0;
+    }
+    .artifact-card img,
+    .artifact-card model-viewer {
+        height: 200px;
+    }
+}

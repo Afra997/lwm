@@ -1,0 +1,452 @@
+/* Responsive Design */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--space-4);
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .archive-dashboard {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--neutral-200);
+    }
+    
+    .category-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+    }
+    
+    .category-item {
+        flex: 1;
+        min-width: 150px;
+        justify-content: center;
+    }
+    
+    .vr-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+        text-align: center;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+    }
+    
+    .demo-stages {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+    
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 var(--space-4);
+    }
+    
+    /* Navigation */
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: var(--space-6);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-base);
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-actions {
+        gap: var(--space-3);
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 100px 0 var(--space-16);
+        min-height: auto;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--space-4);
+        margin-bottom: var(--space-8);
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-primary.large,
+    .btn-outline.large {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .artifact-model {
+        width: 250px;
+        height: 250px;
+    }
+    
+    /* Sections */
+    section {
+        padding: var(--space-16) 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .gallery-filters {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+    }
+    
+    .filter-btn {
+        font-size: 0.875rem;
+        padding: var(--space-2) var(--space-4);
+    }
+    
+    /* Timeline */
+    .timeline-navigation {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+    }
+    
+    .timeline-nav-btn {
+        font-size: 0.875rem;
+    }
+    
+    .timeline-events {
+        padding-left: var(--space-6);
+    }
+    
+    .timeline-event {
+        padding-left: var(--space-6);
+        margin-bottom: var(--space-8);
+    }
+    
+    .event-marker {
+        left: -10px;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .event-content {
+        padding: var(--space-4);
+    }
+    
+    .event-content h4 {
+        font-size: 1.25rem;
+    }
+    
+    /* Archive */
+    .search-bar input {
+        font-size: 1rem;
+    }
+    
+    .result-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-3);
+    }
+    
+    .result-thumbnail {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .result-actions {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Preservation */
+    .demo-stages {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+    
+    /* VR Section */
+    .vr-headset {
+        width: 250px;
+        height: 160px;
+    }
+    
+    /* About */
+    .about-text h2 {
+        font-size: 2rem;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+    }
+    
+    .museum-preview {
+        height: 300px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+    }
+    
+    /* Modal */
+    .modal-content {
+        max-width: 95vw;
+        max-height: 95vh;
+        width: auto;
+    }
+    
+    .modal-body {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .artifact-3d-viewer {
+        height: 300px;
+    }
+    
+    .artifact-information {
+        border-left: none;
+        border-top: 1px solid var(--neutral-200);
+    }
+    
+    .info-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 var(--space-3);
+    }
+    
+    .nav-container {
+        padding: 0 var(--space-4);
+        height: 70px;
+    }
+    
+    .nav-menu {
+        top: 70px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-actions {
+        gap: var(--space-3);
+    }
+    
+    .artifact-model {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .features-grid {
+        gap: var(--space-4);
+    }
+    
+    .feature-card {
+        padding: var(--space-6);
+    }
+    
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .vr-headset {
+        width: 200px;
+        height: 120px;
+    }
+    
+    .museum-preview {
+        height: 250px;
+        padding: var(--space-6);
+    }
+}
+
+/* Large Desktop (min-width: 1400px) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .artifact-model {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    * {
+        color: black !important;
+        background: white !important;
+        box-shadow: none !important;
+    }
+    
+    .navbar,
+    .hero-background,
+    .modal-overlay,
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+        display: none !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        margin-bottom: 2rem;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --neutral-50: #ffffff;
+        --neutral-100: #f0f0f0;
+        --neutral-600: #404040;
+        --neutral-700: #303030;
+        --neutral-800: #202020;
+        --neutral-900: #000000;
+    }
+    
+    .btn-primary,
+    .btn-outline,
+    .feature-card,
+    .artifact-card {
+        border: 2px solid currentColor;
+    }
+}

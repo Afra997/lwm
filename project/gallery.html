@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>৩ডি গ্যালারি - মুক্তিযুদ্ধের নিদর্শন</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/gallery-custom.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">মুক্তিযুদ্ধ আর্কাইভ</a>
+            <a href="index.html" class="nav-link">প্রথম পৃষ্ঠা</a>
+            <a href="gallery.html" class="nav-link active">৩ডি গ্যালারি</a>
+            <a href="index.html#archive" class="nav-link">আর্কাইভ</a>
+            <a href="index.html#timeline" class="nav-link">টাইমলাইন</a>
+            <a href="index.html#preservation" class="nav-link">সংরক্ষণ</a>
+            <a href="index.html#about" class="nav-link">সম্পর্কে</a>
+        </div>
+    </nav>
+    <main>
+        <section class="gallery-section">
+            <div class="container">
+                <h1>বাংলাদেশের মুক্তিযুদ্ধের ৩ডি নিদর্শন ও দলিল</h1>
+                <p>এখানে মুক্তিযুদ্ধের গুরুত্বপূর্ণ নিদর্শন ও দলিলসমূহের ৩ডি চিত্র প্রদর্শিত হয়েছে।</p>
+                
+                <!-- 3D Model Upload Form -->
+                
+                <div id="modelViewerContainer" style="margin-bottom: 2rem;"></div>
+
+                <div class="gallery-grid">
+                    <!-- Example gallery items -->
+                    <div class="gallery-item">
+                        <h3>মুক্তিযুদ্ধের রাইফেল</h3>
+                        <model-viewer src="models/sniper_rifle.glb" alt="৩ডি রাইফেল" camera-controls auto-rotate style="width:100%;height:300px; background: #f8f8f8; border-radius: 8px;"></model-viewer>
+                        <p>১৯৭১ সালে ব্যবহৃত অস্ত্র</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h3>স্বাধীনতার দলিল</h3>
+                        <img src="images/document-3d.png" alt="৩ডি দলিল" style="width:100%;height:300px;object-fit:cover; background: #f8f8f8; border-radius: 8px;" />
+                        <p>মূল স্বাধীনতার ঘোষণাপত্র</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h3>বীর শ্রেষ্ঠ পদক</h3>
+                        <img src="images/medal-3d.png" alt="৩ডি পদক" style="width:100%;height:300px;object-fit:cover; background: #f8f8f8; border-radius: 8px;" />
+                        <p>মুক্তিযোদ্ধাদের সম্মাননা</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h3>মুক্তিযোদ্ধাদের ছবি</h3>
+                        <img src="images/muktijoddha.jpg" alt="মুক্তিযোদ্ধাদের ছবি" style="width:100%;height:300px;object-fit:cover; background: #f8f8f8; border-radius: 8px;" />
+                        <p>মুক্তিযুদ্ধের সময়কার মুক্তিযোদ্ধাদের একটি ঐতিহাসিক ছবি</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h3>১৯৭১ সালের পতাকা</h3>
+                        <img src="images/flag-1971.jpg" alt="১৯৭১ সালের পতাকা" style="width:100%;height:300px;object-fit:cover; background: #f8f8f8; border-radius: 8px;" />
+                        <p>বাংলাদেশের স্বাধীনতার সময় ব্যবহৃত পতাকা</p>
+                    </div>
+                    <div class="gallery-item">
+                        <h3>মুক্তিযুদ্ধের স্মৃতিস্তম্ভ</h3>
+                        <img src="images/sriti-stambha.jpg" alt="মুক্তিযুদ্ধের স্মৃতিস্তম্ভ" style="width:100%;height:300px;object-fit:cover; background: #f8f8f8; border-radius: 8px;" />
+                        <p>জাতীয় স্মৃতিস্তম্ভ, সাভার</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module">
+        document.getElementById('modelUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file && (file.name.endsWith('.obj') || file.name.endsWith('.glb'))) {
+                const url = URL.createObjectURL(file);
+                document.getElementById('modelViewerContainer').innerHTML = `
+                    <model-viewer src="${url}" alt="আপলোডকৃত ৩ডি মডেল" camera-controls auto-rotate style="width:100%;height:300px; background: #f8f8f8; border-radius: 8px;"></model-viewer>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

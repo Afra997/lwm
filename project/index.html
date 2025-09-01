@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মুক্তিযুদ্ধ জাদুঘর আর্কাইভ - ৩ডি ভার্চুয়াল প্ল্যাটফর্ম</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                            <path d="M2 17L12 22L22 17"/>
+                            <path d="M2 12L12 17L22 12"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">মুক্তিযুদ্ধ আর্কাইভ</span>
+                </div>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">প্রথম পৃষ্ঠা</a>
+                <a href="gallery.html" class="nav-link">৩ডি গ্যালারি</a>
+                <a href="#archive" class="nav-link">আর্কাইভ</a>
+                <a href="#timeline" class="nav-link">টাইমলাইন</a>
+                <a href="#preservation" class="nav-link">সংরক্ষণ</a>
+                <a href="#about" class="nav-link">সম্পর্কে</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-secondary">সাইন ইন</button>
+                <button class="btn-primary">ট্যুর শুরু করুন</button>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="heroParticles"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        ইতিহাস সংরক্ষণে
+                        <span class="highlight">৩ডি উদ্ভাবন</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        আমাদের আধুনিক ৩ডি ভার্চুয়াল প্ল্যাটফর্মের মাধ্যমে মুক্তিযুদ্ধ জাদুঘরকে নতুনভাবে অনুভব করুন। ঐতিহাসিক নিদর্শন, দলিল ও গল্পসমূহ আবিষ্কার করুন ডিজিটাল সংরক্ষণ প্রযুক্তির মাধ্যমে।
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">১০,০০০+</span>
+                            <span class="stat-label">৩ডি নিদর্শন</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">৫০০+</span>
+                            <span class="stat-label">ভার্চুয়াল গ্যালারি</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">১M+</span>
+                            <span class="stat-label">ডিজিটাল রেকর্ড</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="btn-primary large" onclick="startVirtualTour()">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5V19L19 12L8 5Z"/>
+                            </svg>
+                            ভার্চুয়াল ট্যুর শুরু করুন
+                        </button>
+                        <button class="btn-outline large" onclick="exploreArchive()">
+                            আর্কাইভ দেখুন
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="artifact-viewer" id="heroArtifact">
+                        <div class="viewer-controls">
+                            <button class="control-btn" data-action="rotate">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 4V1L8 5L12 9V6C15.31 6 18 8.69 18 12C18 15.31 15.31 18 12 18C8.69 18 6 15.31 6 12H4C4 16.42 7.58 20 12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4Z"/>
+                                </svg>
+                            </button>
+                            <button class="control-btn" data-action="zoom">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3S3 5.91 3 9.5S5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14Z"/>
+                                    <path d="M12 10H10V12H9V10H7V9H9V7H10V9H12V10Z"/>
+                                </svg>
+                            </button>
+                            <button class="control-btn" data-action="info">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M11 9H13V7H11M12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2ZM11 17H13V11H11V17Z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="artifact-display">
+                            <div class="artifact-model" id="artifact3D"></div>
+                            <div class="artifact-info">
+                                <h3>ঐতিহাসিক রাইফেল</h3>
+                                <p>মুক্তিযুদ্ধ ১৯৭১-এ ব্যবহৃত</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- 3D Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ইন্টারেক্টিভ ৩ডি গ্যালারি</h2>
+                <p class="section-subtitle">
+                    আমাদের সংরক্ষিত ঐতিহাসিক নিদর্শনসমূহ দেখুন চমৎকার ৩ডি বিশদে
+                </p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">সব নিদর্শন</button>
+                    <button class="filter-btn" data-filter="weapons">অস্ত্র</button>
+                    <button class="filter-btn" data-filter="documents">দলিল</button>
+                    <button class="filter-btn" data-filter="uniforms">ইউনিফর্ম</button>
+                    <button class="filter-btn" data-filter="medals">পদক</button>
+                </div>
+                <div class="gallery-grid" id="galleryGrid">
+                    <div class="artifact-card" data-category="weapons">
+                        <div class="artifact-preview">
+                            <div class="artifact-3d" data-model="rifle"></div>
+                            <div class="artifact-overlay">
+                                <button class="view-btn">৩ডি-তে দেখুন</button>
+                            </div>
+                        </div>
+                        <div class="artifact-details">
+                            <h3>মুক্তিযুদ্ধের রাইফেল</h3>
+                            <p>মুক্তিবাহিনীর ব্যবহৃত স্ট্যান্ডার্ড রাইফেল</p>
+                            <div class="artifact-meta">
+                                <span class="meta-tag">১৯৭১</span>
+                                <span class="meta-tag">অস্ত্র</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artifact-card" data-category="documents">
+                        <div class="artifact-preview">
+                            <div class="artifact-3d" data-model="document"></div>
+                            <div class="artifact-overlay">
+                                <button class="view-btn">৩ডি-তে দেখুন</button>
+                            </div>
+                        </div>
+                        <div class="artifact-details">
+                            <h3>স্বাধীনতার ঘোষণা</h3>
+                            <p>মূল স্বাধীনতার ঘোষণাপত্র</p>
+                            <div class="artifact-meta">
+                                <span class="meta-tag">মার্চ ১৯৭১</span>
+                                <span class="meta-tag">দলিল</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artifact-card" data-category="uniforms">
+                        <div class="artifact-preview">
+                            <div class="artifact-3d" data-model="uniform"></div>
+                            <div class="artifact-overlay">
+                                <button class="view-btn">৩ডি-তে দেখুন</button>
+                            </div>
+                        </div>
+                        <div class="artifact-details">
+                            <h3>মুক্তিযোদ্ধার ইউনিফর্ম</h3>
+                            <p>মুক্তিযুদ্ধ চলাকালীন ব্যবহৃত পূর্ণ ইউনিফর্ম</p>
+                            <div class="artifact-meta">
+                                <span class="meta-tag">১৯৭১</span>
+                                <span class="meta-tag">ইউনিফর্ম</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artifact-card" data-category="medals">
+                        <div class="artifact-preview">
+                            <div class="artifact-3d" data-model="medal"></div>
+                            <div class="artifact-overlay">
+                                <button class="view-btn">৩ডি-তে দেখুন</button>
+                            </div>
+                        </div>
+                        <div class="artifact-details">
+                            <h3>বীর শ্রেষ্ঠ পদক</h3>
+                            <p>অসাধারণ সাহসিকতার জন্য সর্বোচ্চ সামরিক সম্মান</p>
+                            <div class="artifact-meta">
+                                <span class="meta-tag">১৯৭৩</span>
+                                <span class="meta-tag">পদক</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">বিপ্লবী ৩ডি সংরক্ষণ</h2>
+                <p class="section-subtitle">
+                    আধুনিক প্রযুক্তি ও ঐতিহাসিক সংরক্ষণ একত্রিত হয়ে ডিজিটাল ঐতিহ্য অভিজ্ঞতা তৈরি করছে
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7L12 12L22 7L12 2ZM12 17L2 12L4.5 13.5L12 17L19.5 13.5L22 12L12 17Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">৩ডি নিদর্শন মডেলিং</h3>
+                    <p class="feature-description">
+                        উচ্চ রেজোলিউশনের ৩ডি স্ক্যানিং ও মডেলিং, সূক্ষ্ম টেক্সচারসহ।
+                    </p>
+                    <button class="feature-link">আরও জানুন →</button>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 6H2V20C2 21.1 2.9 22 4 22H18V20H4V6ZM20 2H8C6.9 2 6 2.9 6 4V16C6 17.1 6.9 18 8 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 12H8V4H20V12Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">ভার্চুয়াল গ্যালারি</h3>
+                    <p class="feature-description">
+                        ইন্টারেক্টিভ প্রদর্শনী ও গাইডেড ট্যুরসহ ভার্চুয়াল গ্যালারি।
+                    </p>
+                    <button class="feature-link">অন্বেষণ করুন →</button>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">এআই-চালিত আর্কাইভ</h3>
+                    <p class="feature-description">
+                        মেশিন লার্নিং দ্বারা দ্রুত অনুসন্ধান ও শ্রেণিবিন্যাস।
+                    </p>
+                    <button class="feature-link">আবিষ্কার করুন →</button>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">এআর/ভিআর সংযুক্তি</h3>
+                    <p class="feature-description">
+                        ভার্চুয়াল ও অগমেন্টেড রিয়েলিটি অভিজ্ঞতা, ইতিহাসকে জীবন্ত করে তোলে।
+                    </p>
+                    <button class="feature-link">অভিজ্ঞতা করুন →</button>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 12L11 14L15 10L21 16H3L9 12ZM19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">ডিজিটাল সংরক্ষণ</h3>
+                    <p class="feature-description">
+                        উন্নত ডিজিটাইজেশন প্রযুক্তি, ভবিষ্যৎ প্রজন্মের জন্য ঐতিহ্য সংরক্ষণ।
+                    </p>
+                    <button class="feature-link">আরও জানুন →</button>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L19.71 9.71L22 12V6H16Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">বিশ্লেষণ ড্যাশবোর্ড</h3>
+                    <p class="feature-description">
+                        গবেষক ও প্রশাসকদের জন্য বিশ্লেষণ ও প্রতিবেদন টুল।
+                    </p>
+                    <button class="feature-link">ডেমো দেখুন →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ইন্টারেক্টিভ ঐতিহাসিক টাইমলাইন</h2>
+                <p class="section-subtitle">
+                    মুক্তিযুদ্ধের গুরুত্বপূর্ণ ঘটনাসমূহ দেখুন ইন্টারেক্টিভ ৩ডি ভিজ্যুয়ালাইজেশনে
+                </p>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-navigation">
+                    <button class="timeline-nav-btn" data-year="1970">১৯৭০</button>
+                    <button class="timeline-nav-btn active" data-year="1971">১৯৭১</button>
+                    <button class="timeline-nav-btn" data-year="1972">১৯৭২</button>
+                </div>
+                <div class="timeline-content" id="timelineContent">
+                    <div class="timeline-year active" data-year="1971">
+                        <div class="timeline-events">
+                            <div class="timeline-event" data-month="3">
+                                <div class="event-marker"></div>
+                                <div class="event-content">
+                                    <h3>২৫ মার্চ, ১৯৭১</h3>
+                                    <h4>অপারেশন সার্চলাইট</h4>
+                                    <p>পাকিস্তানি সেনাবাহিনীর দমন অভিযান শুরু</p>
+                                    <button class="event-explore">৩ডি-তে দেখুন</button>
+                                </div>
+                            </div>
+                            <div class="timeline-event" data-month="4">
+                                <div class="event-marker"></div>
+                                <div class="event-content">
+                                    <h3>১৭ এপ্রিল, ১৯৭১</h3>
+                                    <h4>অস্থায়ী সরকার</h4>
+                                    <p>বাংলাদেশ সরকারের গঠন</p>
+                                    <button class="event-explore">৩ডি-তে দেখুন</button>
+                                </div>
+                            </div>
+                            <div class="timeline-event" data-month="12">
+                                <div class="event-marker"></div>
+                                <div class="event-content">
+                                    <h3>১৬ ডিসেম্বর, ১৯৭১</h3>
+                                    <h4>বিজয় দিবস</h4>
+                                    <p>পাকিস্তানি বাহিনীর আত্মসমর্পণ</p>
+                                    <button class="event-explore">৩ডি-তে দেখুন</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Archive Management Section -->
+    <section id="archive" class="archive-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">উন্নত আর্কাইভ ব্যবস্থাপনা</h2>
+                <p class="section-subtitle">
+                    এআই-চালিত সংগঠন ও উন্নত অনুসন্ধানসহ ডিজিটাল সম্পদ ব্যবস্থাপনা
+                </p>
+            </div>
+            <div class="archive-dashboard">
+                <div class="dashboard-sidebar">
+                    <div class="sidebar-header">
+                        <h3>আর্কাইভ বিভাগ</h3>
+                    </div>
+                    <div class="category-list">
+                        <div class="category-item active">
+                            <div class="category-icon">📁</div>
+                            <span>সব সংগ্রহ</span>
+                            <span class="category-count">১৫,৪৩২</span>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-icon">⚔️</div>
+                            <span>সামরিক নিদর্শন</span>
+                            <span class="category-count">৩,২৪১</span>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-icon">📄</div>
+                            <span>দলিল</span>
+                            <span class="category-count">৮,৭৫৬</span>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-icon">🎖️</div>
+                            <span>পুরস্কার ও পদক</span>
+                            <span class="category-count">১,২০৩</span>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-icon">👕</div>
+                            <span>ইউনিফর্ম</span>
+                            <span class="category-count">৮৯২</span>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-icon">📸</div>
+                            <span>ছবি</span>
+                            <span class="category-count">১,৩৪০</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-main">
+                    <div class="search-bar">
+                        <input type="text" placeholder="নিদর্শন, দলিল বা ঘটনা অনুসন্ধান করুন..." id="archiveSearch">
+                        <button class="search-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3S3 5.91 3 9.5S5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="archive-results">
+                        <div class="result-item">
+                            <div class="result-thumbnail">
+                                <div class="thumbnail-3d"></div>
+                            </div>
+                            <div class="result-info">
+                                <h4>স্টেন গান এমকে II</h4>
+                                <p>মুক্তিযোদ্ধাদের ব্যবহৃত ব্রিটিশ সাবমেশিন গান</p>
+                                <div class="result-tags">
+                                    <span class="tag">অস্ত্র</span>
+                                    <span class="tag">১৯৭১</span>
+                                    <span class="tag">৩ডি স্ক্যান</span>
+                                </div>
+                            </div>
+                            <div class="result-actions">
+                                <button class="action-btn">৩ডি দেখুন</button>
+                                <button class="action-btn secondary">ডাউনলোড</button>
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-thumbnail">
+                                <div class="thumbnail-3d"></div>
+                            </div>
+                            <div class="result-info">
+                                <h4>পূর্ব পাকিস্তানের মূল মানচিত্র</h4>
+                                <p>চিহ্নিত অবস্থানসহ কৌশলগত সামরিক মানচিত্র</p>
+                                <div class="result-tags">
+                                    <span class="tag">দলিল</span>
+                                    <span class="tag">১৯৭১</span>
+                                    <span class="tag">উচ্চ রেজোলিউশন</span>
+                                </div>
+                            </div>
+                            <div class="result-actions">
+                                <button class="action-btn">বিস্তারিত দেখুন</button>
+                                <button class="action-btn secondary">টীকা যোগ করুন</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preservation Technology Section -->
+    <section id="preservation" class="preservation-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ডিজিটাল সংরক্ষণ প্রযুক্তি</h2>
+                <p class="section-subtitle">
+                    আধুনিক সংরক্ষণ পদ্ধতি, ঐতিহাসিক নির্ভুলতা ও দীর্ঘমেয়াদী প্রবেশযোগ্যতা নিশ্চিত করে
+                </p>
+            </div>
+            <div class="preservation-showcase">
+                <div class="showcase-content">
+                    <div class="tech-demo">
+                        <h3>৩ডি স্ক্যানিং প্রক্রিয়া</h3>
+                        <div class="demo-stages">
+                            <div class="stage active" data-stage="1">
+                                <div class="stage-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M9 2L7.17 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4H16.83L15 2H9ZM12 17C9.24 17 7 14.76 7 12S9.24 7 12 7S17 9.24 17 12S14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12S10.34 15 12 15S15 13.66 15 12S13.66 9 12 9Z"/>
+                                    </svg>
+                                </div>
+                                <h4>উচ্চ রেজোলিউশন ক্যাপচার</h4>
+                                <p>পেশাদার ৩ডি স্ক্যানিং ও ফটোগ্রামেট্রি</p>
+                            </div>
+                            <div class="stage" data-stage="2">
+                                <div class="stage-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/>
+                                    </svg>
+                                </div>
+                                <h4>এআই প্রসেসিং</h4>
+                                <p>মেশিন লার্নিং দ্বারা উন্নয়ন ও অপ্টিমাইজেশন</p>
+                            </div>
+                            <div class="stage" data-stage="3">
+                                <div class="stage-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                                    </svg>
+                                </div>
+                                <h4>৩ডি মডেল তৈরি</h4>
+                                <p>নির্ভুল জ্যামিতিক পুনর্গঠন ও টেক্সচার</p>
+                            </div>
+                            <div class="stage" data-stage="4">
+                                <div class="stage-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19Z"/>
+                                    </svg>
+                                </div>
+                                <h4>আর্কাইভ সংযুক্তি</h4>
+                                <p>ডিজিটাল সংগ্রহে সহজ সংযুক্তি</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-stats">
+                        <div class="stat-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">📊</div>
+                                <div class="stat-number" data-target="99.8">0</div>
+                                <div class="stat-label">নির্ভুলতার হার</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">⚡</div>
+                                <div class="stat-number" data-target="2.5">0</div>
+                                <div class="stat-label">স্ক্যান প্রতি ঘণ্টা</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">💾</div>
+                                <div class="stat-number" data-target="50">0</div>
+                                <div class="stat-label">টিবি স্টোরেজ</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">🔄</div>
+                                <div class="stat-number" data-target="100">0</div>
+                                <div class="stat-label">বছর স্থায়িত্ব</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VR Experience Section -->
+    <section class="vr-section">
+        <div class="container">
+            <div class="vr-content">
+                <div class="vr-text">
+                    <h2>ইমার্সিভ ভিআর অভিজ্ঞতা</h2>
+                    <p>
+                        আমাদের ভার্চুয়াল রিয়েলিটি প্ল্যাটফর্মে ইতিহাসে প্রবেশ করুন। পুনর্গঠিত ঐতিহাসিক দৃশ্য, নিদর্শন স্পর্শ করুন এবং মুক্তিযুদ্ধের গল্প অনুভব করুন।
+                    </p>
+                    <div class="vr-features">
+                        <div class="vr-feature">
+                            <svg class="feature-check" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+                            </svg>
+                            <span>৩৬০° ঐতিহাসিক পরিবেশ</span>
+                        </div>
+                        <div class="vr-feature">
+                            <svg class="feature-check" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+                            </svg>
+                            <span>ইন্টারেক্টিভ নিদর্শন স্পর্শ</span>
+                        </div>
+                        <div class="vr-feature">
+                            <svg class="feature-check" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+                            </svg>
+                            <span>বহুভাষী অডিও গাইড</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary large vr-btn">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 4H3C1.9 4 1 4.9 1 6V18C1 19.1 1.9 20 3 20H21C22.1 20 23 19.1 23 18V6C23 4.9 22.1 4 21 4ZM21 18H3V6H21V18Z"/>
+                        </svg>
+                        ভিআর অভিজ্ঞতা চালু করুন
+                    </button>
+                </div>
+                <div class="vr-visual">
+                    <div class="vr-headset">
+                        <div class="headset-glow"></div>
+                        <div class="vr-content-preview">
+                            <div class="preview-scene" id="vrPreview"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>ভবিষ্যৎ প্রজন্মের জন্য ঐতিহ্য সংরক্ষণ</h2>
+                    <p>
+                        মুক্তিযুদ্ধ জাদুঘর আর্কাইভ সফটওয়্যার সিস্টেম ডিজিটাল ঐতিহ্য সংরক্ষণের নতুন দিগন্ত। উন্নত ৩ডি প্রযুক্তি ও পূর্ণাঙ্গ আর্কাইভ ব্যবস্থাপনার মাধ্যমে বাংলাদেশের মুক্তিযুদ্ধের গল্প ও নিদর্শন ভবিষ্যৎ প্রজন্মের জন্য সংরক্ষিত থাকবে।
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <h4>গবেষণার উৎকর্ষ</h4>
+                            <p>বিস্তারিত ডিজিটাল রেকর্ডে একাডেমিক গবেষণা সহায়তা</p>
+                        </div>
+                        <div class="about-feature">
+                            <h4>শিক্ষামূলক প্রভাব</h4>
+                            <p>ইন্টারেক্টিভ ঐতিহাসিক অভিজ্ঞতার মাধ্যমে শিক্ষার্থীদের সম্পৃক্তকরণ</p>
+                        </div>
+                        <div class="about-feature">
+                            <h4>বিশ্বব্যাপী প্রবেশযোগ্যতা</h4>
+                            <p>বিশ্বের দর্শকদের জন্য ইতিহাস সহজলভ্য করা</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="museum-preview">
+                        <div class="preview-content" id="museumPreview"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo-container">
+                            <div class="logo-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                                    <path d="M2 17L12 22L22 17"/>
+                                    <path d="M2 12L12 17L22 12"/>
+                                </svg>
+                            </div>
+                            <span class="logo-text">মুক্তিযুদ্ধ আর্কাইভ</span>
+                        </div>
+                        <p class="footer-description">
+                            বাংলাদেশের মুক্তিযুদ্ধের ঐতিহ্য সংরক্ষণে উদ্ভাবনী ৩ডি প্রযুক্তি ও ডিজিটাল সমাধান।
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>প্ল্যাটফর্ম</h4>
+                    <ul class="footer-links">
+                        <li><a href="#gallery">৩ডি গ্যালারি</a></li>
+                        <li><a href="#archive">ডিজিটাল আর্কাইভ</a></li>
+                        <li><a href="#timeline">ইন্টারেক্টিভ টাইমলাইন</a></li>
+                        <li><a href="#preservation">সংরক্ষণ প্রযুক্তি</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>রিসোর্স</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">ডকুমেন্টেশন</a></li>
+                        <li><a href="#">এপিআই রেফারেন্স</a></li>
+                        <li><a href="#">গবেষণা পোর্টাল</a></li>
+                        <li><a href="#">শিক্ষামূলক উপকরণ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>যোগাযোগ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">যোগাযোগ করুন</a></li>
+                        <li><a href="#">পার্টনারশিপ</a></li>
+                        <li><a href="#">গবেষণা সহযোগিতা</a></li>
+                        <li><a href="#">মিডিয়া কিট</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; ২০২৪ মুক্তিযুদ্ধ জাদুঘর আর্কাইভ। সর্বস্বত্ব সংরক্ষিত।</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">গোপনীয়তা নীতি</a>
+                    <a href="#">সেবার শর্তাবলী</a>
+                    <a href="#">প্রবেশযোগ্যতা</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 3D Modal -->
+    <div class="modal-overlay" id="artifactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">নিদর্শন দর্শক</h3>
+                <button class="modal-close" id="modalClose">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="artifact-3d-viewer" id="modal3DViewer">
+                    <div class="viewer-controls">
+                        <button class="control-btn" data-action="rotate">ঘোরান</button>
+                        <button class="control-btn" data-action="zoom">জুম</button>
+                        <button class="control-btn" data-action="fullscreen">পূর্ণস্ক্রীন</button>
+                    </div>
+                </div>
+                <div class="artifact-information">
+                    <div class="info-tabs">
+                        <button class="tab-btn active" data-tab="details">বিস্তারিত</button>
+                        <button class="tab-btn" data-tab="history">ইতিহাস</button>
+                        <button class="tab-btn" data-tab="annotations">টীকা</button>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-panel active" id="detailsTab">
+                            <h4>নিদর্শনের বিস্তারিত</h4>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <label>কাল:</label>
+                                    <span>১৯৭১ মুক্তিযুদ্ধ</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>বিভাগ:</label>
+                                    <span>সামরিক সরঞ্জাম</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>উপাদান:</label>
+                                    <span>ইস্পাত, কাঠ</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>মাত্রা:</label>
+                                    <span>৭৬.২ × ৫.১ × ১৫.২ সেমি</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/3d-viewer.js"></script>
+    <script src="scripts/animations.js"></script>
+</body>
+</html>
