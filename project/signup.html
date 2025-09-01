@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bn"> <!-- Changed language to Bengali -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>সাইন আপ - মুক্তিযুদ্ধ আর্কাইভ</title> <!-- Translated Title -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header Section (Consistent) -->
+    <header class="bg-white border-b border-gray-200">
+        <nav class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">মুক্তিযুদ্ধ জাদুঘর বাংলাদেশ</a> <!-- Translated -->
+            
+            <div>
+                <a href="login.html" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-md">লগইন</a> <!-- Translated -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sign Up Form Section -->
+    <main class="flex items-center justify-center py-12 px-4">
+        <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+            <div class="text-center mb-6">
+                <div class="mx-auto bg-gray-200 rounded-full h-16 w-16 flex items-center justify-center">
+                    <i class="fas fa-camera text-3xl text-gray-500"></i>
+                </div>
+                <p class="mt-2 text-sm text-gray-500">ছবি আপলোড করুন</p> <!-- Translated -->
+            </div>
+            <form id="signupForm">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">নাম</label> <!-- Translated -->
+                    <input type="text" id="name" placeholder="আপনার নাম দিন" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required> <!-- Translated -->
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">ইমেইল</label> <!-- Translated -->
+                    <input type="email" id="email" placeholder="আপনার ইমেইল দিন" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required> <!-- Translated -->
+                </div>
+                <div class="mb-4 relative">
+                    <label for="password" class="block text-gray-700 text-sm font-bold mb-2">পাসওয়ার্ড</label> <!-- Translated -->
+                    <input type="password" id="password" placeholder="একটি পাসওয়ার্ড দিন" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required> <!-- Translated -->
+                    <i class="fas fa-eye absolute top-10 right-4 text-gray-400 cursor-pointer"></i>
+                </div>
+                <div class="mb-6 relative">
+                    <label for="confirm-password" class="block text-gray-700 text-sm font-bold mb-2">পাসওয়ার্ড নিশ্চিত করুন</label> <!-- Translated -->
+                    <input type="password" id="confirm-password" placeholder="পুনরায় পাসওয়ার্ড দিন" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required> <!-- Translated -->
+                    <i class="fas fa-eye absolute top-10 right-4 text-gray-400 cursor-pointer"></i>
+                </div>
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md">সাইন আপ</button> <!-- Translated -->
+            </form>
+            <p class="text-center mt-6 text-sm text-gray-600">
+                ইতিমধ্যে একটি অ্যাকাউন্ট আছে? <a href="login.html" class="text-red-600 hover:underline font-semibold">লগইন করুন</a> <!-- Translated -->
+            </p>
+        </div>
+    </main>
+</body>
+</html>

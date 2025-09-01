@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="bn"> <!-- Changed language to Bengali -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>অ্যাডমিন ড্যাশবোর্ড - মুক্তিযুদ্ধ আর্কাইভ</title> <!-- Translated Title -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-gray-800 text-white flex flex-col">
+            <div class="p-4 border-b border-gray-700">
+                <h1 class="text-2xl font-bold">অ্যাডমিন ড্যাশবোর্ড</h1> <!-- Translated -->
+            </div>
+            <nav class="flex-grow p-4 space-y-2">
+                <a href="admin-dashboard.html" class="flex items-center gap-3 p-2 rounded-md bg-gray-700"><i class="fas fa-tachometer-alt"></i><span>ড্যাশবোর্ড</span></a> <!-- Translated -->
+                <a href="artifacts.html" class="flex items-center gap-3 p-2 rounded-md hover:bg-gray-700"><i class="fas fa-archive"></i><span>নিদর্শন</span></a> <!-- Translated -->
+                <a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-gray-700"><i class="fas fa-users"></i><span>ব্যবহারকারী</span></a> <!-- Translated -->
+                <a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-gray-700"><i class="fas fa-ticket-alt"></i><span>বুকিং</span></a> <!-- Translated -->
+                <a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-gray-700"><i class="fas fa-comment-dots"></i><span>মতামত</span></a> <!-- Translated -->
+            </nav>
+            <div class="p-4 border-t border-gray-700">
+                <a href="index.html" class="flex items-center gap-3 p-2 rounded-md hover:bg-gray-700"><i class="fas fa-sign-out-alt"></i><span>লগ আউট</span></a> <!-- Translated -->
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-8 overflow-y-auto">
+            <!-- Top Row: Stat Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-md"><h4 class="text-gray-500">আজকের বুকিং</h4><p class="text-3xl font-bold">128</p></div> <!-- Translated -->
+                <div class="bg-white p-6 rounded-lg shadow-md"><h4 class="text-gray-500">এই সপ্তাহের বুকিং</h4><p class="text-3xl font-bold">754</p></div> <!-- Translated -->
+                <div class="bg-white p-6 rounded-lg shadow-md"><h4 class="text-gray-500">এই মাসের বুকিং</h4><p class="text-3xl font-bold">3,120</p></div> <!-- Translated -->
+            </div>
+
+            <!-- Main Grid: Tables and Logs -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left Side: User & Artifacts Management -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- User List -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-4">ব্যবহারকারীর তালিকা</h3> <!-- Translated -->
+                        <!-- Placeholder for user table -->
+                        <p class="text-gray-500">ব্যবহারকারী ব্যবস্থাপনার টেবিল এখানে থাকবে।</p> <!-- Translated -->
+                    </div>
+                    <!-- Visitor Feedback -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">দর্শনার্থীদের মতামত</h3> <!-- Translated -->
+                            <a href="#" class="text-sm font-semibold text-sky-600 hover:underline">সব দেখুন &rarr;</a> <!-- Translated -->
+                        </div>
+                        <!-- Placeholder for feedback list -->
+                        <p class="text-gray-500">দর্শনার্থীদের সর্বশেষ অভিযোগ এবং পরামর্শের তালিকা এখানে দেখা যাবে।</p> <!-- Translated -->
+                    </div>
+                </div>
+
+                <!-- Right Side: Activity Log -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4">কার্যকলাপ লগ</h3> <!-- Translated -->
+                    <ul class="space-y-4 text-sm">
+                        <!-- Placeholder log items -->
+                        <li class="border-b pb-2"><strong>অ্যাডমিন</strong> নিদর্শন #1024 মুছে ফেলেছেন। <span class="text-gray-400 block">এইমাত্র</span></li> <!-- Translated -->
+                        <li class="border-b pb-2"><strong>স্টাফ</strong> নিদর্শন #981 আপডেট করেছেন। <span class="text-gray-400 block">৫ মিনিট আগে</span></li> <!-- Translated -->
+                        <li class="border-b pb-2"><strong>অ্যাডমিন</strong> একজন নতুন ব্যবহারকারী অনুমোদন করেছেন। <span class="text-gray-400 block">১ ঘন্টা আগে</span></li> <!-- Translated -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

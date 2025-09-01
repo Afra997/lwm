@@ -148,15 +148,22 @@
     </footer>
     <script>
     // Smooth scroll to artifacts by year
-    document.querySelectorAll('.year-marker').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const year = this.getAttribute('data-year');
-            const target = document.querySelector('.artifact-card[data-year="' + year + '"]');
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                document.querySelectorAll('.year-marker').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+    // This is the corrected JavaScript logic for your navigation menu
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            // ONLY prevent default for internal hash links
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
             }
+            // For all other links (like gallery.html), the browser will
+            // follow the link normally because we are NOT calling e.preventDefault().
         });
     });
 

@@ -2,7 +2,7 @@
 
 /* Navigation */
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -11,6 +11,9 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: var(--transition-base);
+    
+
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optional: adds a nice shadow */
 }
 
 .nav-container {

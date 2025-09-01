@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>মুক্তিযুদ্ধ জাদুঘর আর্কাইভ - ৩ডি ভার্চুয়াল প্ল্যাটফর্ম</title>
+    <title>মুক্তিযুদ্ধ জাদুঘর আর্কাইভ</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/responsive.css">
+    <!-- ... your other head content ... -->
+    <link href="https://fonts.googleapis.com/css2?family=...&display=swap" rel="stylesheet">
+    <!-- ADD THIS SCRIPT TAG FOR 3D MODELS -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -58,10 +62,10 @@
                 <div class="hero-text">
                     <h1 class="hero-title">
                         ইতিহাস সংরক্ষণে
-                        <span class="highlight">৩ডি উদ্ভাবন</span>
+                        <span class="highlight">বাংলাদেশের মুক্তিযুদ্ধ জাদুঘরের আর্কাইভ</span>
                     </h1>
                     <p class="hero-subtitle">
-                        আমাদের আধুনিক ৩ডি ভার্চুয়াল প্ল্যাটফর্মের মাধ্যমে মুক্তিযুদ্ধ জাদুঘরকে নতুনভাবে অনুভব করুন। ঐতিহাসিক নিদর্শন, দলিল ও গল্পসমূহ আবিষ্কার করুন ডিজিটাল সংরক্ষণ প্রযুক্তির মাধ্যমে।
+                        আধুনিক ৩ডি ভার্চুয়াল প্ল্যাটফর্মের মাধ্যমে মুক্তিযুদ্ধ জাদুঘরকে নতুনভাবে অনুভব করুন। ঐতিহাসিক নিদর্শন, দলিল ও গল্পসমূহ আবিষ্কার করুন ডিজিটাল সংরক্ষণ প্রযুক্তির মাধ্যমে।
                     </p>
                     <div class="hero-stats">
                         <div class="stat-item">
@@ -78,45 +82,40 @@
                         </div>
                     </div>
                     <div class="hero-actions">
-                        <button class="btn-primary large" onclick="startVirtualTour()">
+                        <a href="login.html" class="btn-primary large">
                             <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5V19L19 12L8 5Z"/>
                             </svg>
                             ভার্চুয়াল ট্যুর শুরু করুন
-                        </button>
+                        </a>
                         <button class="btn-outline large" onclick="exploreArchive()">
                             আর্কাইভ দেখুন
                         </button>
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="artifact-viewer" id="heroArtifact">
-                        <div class="viewer-controls">
-                            <button class="control-btn" data-action="rotate">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 4V1L8 5L12 9V6C15.31 6 18 8.69 18 12C18 15.31 15.31 18 12 18C8.69 18 6 15.31 6 12H4C4 16.42 7.58 20 12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4Z"/>
-                                </svg>
-                            </button>
-                            <button class="control-btn" data-action="zoom">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3S3 5.91 3 9.5S5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14Z"/>
-                                    <path d="M12 10H10V12H9V10H7V9H9V7H10V9H12V10Z"/>
-                                </svg>
-                            </button>
-                            <button class="control-btn" data-action="info">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M11 9H13V7H11M12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2ZM11 17H13V11H11V17Z"/>
-                                </svg>
-                            </button>
+                    <!-- DELETE the old <div class="artifact-viewer"> and everything inside it -->
+                    <!-- REPLACE it with this <model-viewer> component -->
+                    <model-viewer 
+                        src="models/mosin.glb" 
+                        alt="মুক্তিযুদ্ধের একটি ঐতিহাসিক রাইফেল"
+                        camera-controls 
+                        auto-rotate
+                        ar
+                        shadow-intensity="1"
+                        style="width: 100%; height: 500px;">
+                        
+                        <!-- This adds a loading progress bar -->
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
                         </div>
-                        <div class="artifact-display">
-                            <div class="artifact-model" id="artifact3D"></div>
-                            <div class="artifact-info">
-                                <h3>ঐতিহাসিক রাইফেল</h3>
-                                <p>মুক্তিযুদ্ধ ১৯৭১-এ ব্যবহৃত</p>
-                            </div>
+
+                        <!-- This is the title that will show below the model -->
+                        <div class="artifact-info" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); text-align: center; color: white;">
+                            <h3>ঐতিহাসিক রাইফেল</h3>
+                            <p>মুক্তিযুদ্ধ ১৯৭১-এ ব্যবহৃত</p>
                         </div>
-                    </div>
+                    </model-viewer>
                 </div>
             </div>
         </div>
@@ -363,11 +362,13 @@
                         <h3>আর্কাইভ বিভাগ</h3>
                     </div>
                     <div class="category-list">
+                        <a href="archive.html" class="category-item active">
                         <div class="category-item active">
                             <div class="category-icon">📁</div>
                             <span>সব সংগ্রহ</span>
                             <span class="category-count">১৫,৪৩২</span>
                         </div>
+                        </a>
                         <div class="category-item">
                             <div class="category-icon">⚔️</div>
                             <span>সামরিক নিদর্শন</span>
@@ -447,134 +448,8 @@
         </div>
     </section>
 
-    <!-- Preservation Technology Section -->
-    <section id="preservation" class="preservation-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">ডিজিটাল সংরক্ষণ প্রযুক্তি</h2>
-                <p class="section-subtitle">
-                    আধুনিক সংরক্ষণ পদ্ধতি, ঐতিহাসিক নির্ভুলতা ও দীর্ঘমেয়াদী প্রবেশযোগ্যতা নিশ্চিত করে
-                </p>
-            </div>
-            <div class="preservation-showcase">
-                <div class="showcase-content">
-                    <div class="tech-demo">
-                        <h3>৩ডি স্ক্যানিং প্রক্রিয়া</h3>
-                        <div class="demo-stages">
-                            <div class="stage active" data-stage="1">
-                                <div class="stage-icon">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M9 2L7.17 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4H16.83L15 2H9ZM12 17C9.24 17 7 14.76 7 12S9.24 7 12 7S17 9.24 17 12S14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12S10.34 15 12 15S15 13.66 15 12S13.66 9 12 9Z"/>
-                                    </svg>
-                                </div>
-                                <h4>উচ্চ রেজোলিউশন ক্যাপচার</h4>
-                                <p>পেশাদার ৩ডি স্ক্যানিং ও ফটোগ্রামেট্রি</p>
-                            </div>
-                            <div class="stage" data-stage="2">
-                                <div class="stage-icon">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/>
-                                    </svg>
-                                </div>
-                                <h4>এআই প্রসেসিং</h4>
-                                <p>মেশিন লার্নিং দ্বারা উন্নয়ন ও অপ্টিমাইজেশন</p>
-                            </div>
-                            <div class="stage" data-stage="3">
-                                <div class="stage-icon">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
-                                    </svg>
-                                </div>
-                                <h4>৩ডি মডেল তৈরি</h4>
-                                <p>নির্ভুল জ্যামিতিক পুনর্গঠন ও টেক্সচার</p>
-                            </div>
-                            <div class="stage" data-stage="4">
-                                <div class="stage-icon">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19Z"/>
-                                    </svg>
-                                </div>
-                                <h4>আর্কাইভ সংযুক্তি</h4>
-                                <p>ডিজিটাল সংগ্রহে সহজ সংযুক্তি</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-stats">
-                        <div class="stat-grid">
-                            <div class="stat-card">
-                                <div class="stat-icon">📊</div>
-                                <div class="stat-number" data-target="99.8">0</div>
-                                <div class="stat-label">নির্ভুলতার হার</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-icon">⚡</div>
-                                <div class="stat-number" data-target="2.5">0</div>
-                                <div class="stat-label">স্ক্যান প্রতি ঘণ্টা</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-icon">💾</div>
-                                <div class="stat-number" data-target="50">0</div>
-                                <div class="stat-label">টিবি স্টোরেজ</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-icon">🔄</div>
-                                <div class="stat-number" data-target="100">0</div>
-                                <div class="stat-label">বছর স্থায়িত্ব</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- VR Experience Section -->
-    <section class="vr-section">
-        <div class="container">
-            <div class="vr-content">
-                <div class="vr-text">
-                    <h2>ইমার্সিভ ভিআর অভিজ্ঞতা</h2>
-                    <p>
-                        আমাদের ভার্চুয়াল রিয়েলিটি প্ল্যাটফর্মে ইতিহাসে প্রবেশ করুন। পুনর্গঠিত ঐতিহাসিক দৃশ্য, নিদর্শন স্পর্শ করুন এবং মুক্তিযুদ্ধের গল্প অনুভব করুন।
-                    </p>
-                    <div class="vr-features">
-                        <div class="vr-feature">
-                            <svg class="feature-check" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
-                            </svg>
-                            <span>৩৬০° ঐতিহাসিক পরিবেশ</span>
-                        </div>
-                        <div class="vr-feature">
-                            <svg class="feature-check" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
-                            </svg>
-                            <span>ইন্টারেক্টিভ নিদর্শন স্পর্শ</span>
-                        </div>
-                        <div class="vr-feature">
-                            <svg class="feature-check" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
-                            </svg>
-                            <span>বহুভাষী অডিও গাইড</span>
-                        </div>
-                    </div>
-                    <button class="btn-primary large vr-btn">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M21 4H3C1.9 4 1 4.9 1 6V18C1 19.1 1.9 20 3 20H21C22.1 20 23 19.1 23 18V6C23 4.9 22.1 4 21 4ZM21 18H3V6H21V18Z"/>
-                        </svg>
-                        ভিআর অভিজ্ঞতা চালু করুন
-                    </button>
-                </div>
-                <div class="vr-visual">
-                    <div class="vr-headset">
-                        <div class="headset-glow"></div>
-                        <div class="vr-content-preview">
-                            <div class="preview-scene" id="vrPreview"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
+    
 
     <!-- About Section -->
     <section id="about" class="about-section">
